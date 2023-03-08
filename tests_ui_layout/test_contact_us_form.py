@@ -13,7 +13,3 @@ def test_submit_form(playwright: Playwright) -> None:
     # ---------------------
     context.close()
     browser.close()
-
-
-with sync_playwright() as playwright:
-    test_submit_form(playwright)

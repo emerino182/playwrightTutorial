@@ -3,7 +3,7 @@ from pom.home_page_elements import HomePage
 from pom.shop_women_elements import ShopWomen
 
 
-def about_us_section_verbiage(playwright: Playwright) -> None:
+def test_about_us_section_verbiage(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
     page.goto("https://symonstorozhenko.wixsite.com/website-1")
@@ -12,6 +12,3 @@ def about_us_section_verbiage(playwright: Playwright) -> None:
     expect(home_page.celebrate_header).to_be_visible()
     expect(shop_women.celebrate_body).to_be_visible()
 
-
-with sync_playwright() as playwright:
-    about_us_section_verbiage(playwright)
