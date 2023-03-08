@@ -1,6 +1,9 @@
+import pytest
 from playwright.sync_api import Playwright, sync_playwright, expect
 
 
+@pytest.mark.smoke
+@pytest.mark.regression
 def test_login(playwright: Playwright) -> None:
     # browser = playwright.chromium.launch(headless=False, slow_mo=500)
     browser = playwright.chromium.launch(headless=False)

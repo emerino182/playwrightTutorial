@@ -4,6 +4,7 @@ from pom.home_page_elements import HomePage
 from pom.shop_women_elements import ShopWomen
 
 
+@pytest.mark.integration
 def test_about_us_section_verbiage(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
@@ -25,6 +26,7 @@ def test_about_us_section_verbiage_2(playwright: Playwright) -> None:
     expect(shop_women.celebrate_body).to_be_visible()
 
 
+@pytest.mark.regression
 @pytest.mark.xfail(reason="url not ready")
 def test_about_us_section_verbiage_3(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
