@@ -1,16 +1,13 @@
 import pytest
-from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import expect
 
 
 @pytest.mark.smoke
 @pytest.mark.regression
-def test_login(playwright: Playwright) -> None:
-    # browser = playwright.chromium.launch(headless=False, slow_mo=500)
-    browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context()
-    page = context.new_page()
-    page.set_default_timeout(15000)
-    page.goto("https://symonstorozhenko.wixsite.com/website-1")
+def test_login(set_up):
+    # Asses - Given
+    page = set_up
+
     page.wait_for_load_state("networkidle")
     page.get_by_role("button", name="Log In").click()
     # page.get_by_text("Log In").click()
@@ -35,7 +32,3 @@ def test_login(playwright: Playwright) -> None:
     page.wait_for_selector("#comp-kqx72xkk > h1 > span")
     expect(page.get_by_text("Help Center")).to_be_visible()
     print("Yeai")
-
-    # ---------------------
-    context.close()
-    browser.close()
