@@ -2,3 +2,4 @@
 /.pytest_cache/
 pom/__pycache__/
 tests_ui_layout/__pycache__/
+__pycache__/
