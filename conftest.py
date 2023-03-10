@@ -2,21 +2,21 @@ import pytest
 from playwright.sync_api import Playwright
 
 
-@pytest.fixture
-def set_up(page):
+@pytest.fixture(scope="session")
+def set_up(browser):
     # Asses - Given
     # browser = playwright.chromium.launch(headless=False, slow_mo=500)
     # browser = playwright.chromium.launch(headless=False)
-    # context = browser.new_context()
+    context = browser.new_context()
     # Open new page
-    # page = context.new_page()
+    page = context.new_page()
     page.set_default_timeout(15000)
     page.goto("https://symonstorozhenko.wixsite.com/website-1")
 
     yield page
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def login_set_up(set_up):
     page = set_up
     page.wait_for_load_state("networkidle")
@@ -31,8 +31,9 @@ def login_set_up(set_up):
     yield page
 
 
-@pytest.fixture
-def go_to_new_collection_page(page):
+@pytest.fixture(scope="session")
+def go_to_new_collection_page(set_up):
+    page = set_up
     page.set_default_timeout(15000)
     page.goto("/new-collection")
 

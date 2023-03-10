@@ -14,3 +14,17 @@ def test_login(login_set_up):
     page.wait_for_selector("#comp-kqx72xkk > h1 > span")
     expect(page.get_by_text("Help Center")).to_be_visible()
     print("Yeai")
+
+
+@pytest.mark.smoke
+@pytest.mark.regression
+def test_logged_user_can_view_my_orders_menu(login_set_up):
+    # Asses - Given
+    page = login_set_up
+
+    expect(page.get_by_role("button", name="Log In")).to_be_hidden()
+    page.locator("// *[ @ id = 'comp-kqx7ocfp5label']").click()
+    # page.wait_for_load_state()
+    page.wait_for_selector("#comp-kqx72xkk > h1 > span")
+    expect(page.get_by_text("Help Center")).to_be_visible()
+    print("Yeai")
