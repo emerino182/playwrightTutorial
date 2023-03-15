@@ -14,6 +14,7 @@ def set_up(browser):
     page.goto("https://symonstorozhenko.wixsite.com/website-1")
 
     yield page
+    page.close()
 
 
 @pytest.fixture(scope="session")
