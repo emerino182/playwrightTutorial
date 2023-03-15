@@ -1,6 +1,8 @@
 import pytest
 from playwright.sync_api import Playwright
 
+import utils.secret_config
+
 
 @pytest.fixture(scope="session")
 def set_up(browser):
@@ -25,7 +27,7 @@ def login_set_up(set_up):
     page.get_by_test_id("signUp.switchToSignUp").click()
     page.get_by_test_id("siteMembersDialogLayout").get_by_test_id("buttonElement").click()
     page.get_by_test_id("emailAuth").get_by_label("Email").fill("symon.storozhenko@gmail.com")
-    page.get_by_label("Password").fill("test123", timeout=3000)
+    page.get_by_label("Password").fill(utils.secret_config.PASSWORD, timeout=3000)
     page.get_by_test_id("submit").get_by_test_id("buttonElement").click()
     page.wait_for_load_state("networkidle")
 
