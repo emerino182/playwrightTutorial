@@ -8,8 +8,8 @@ from pom.shop_women_elements import ShopWomen
 def test_about_us_section_verbiage(login_set_up):
     page = login_set_up
     home_page = HomePage(page)
-    page.pause()
-    expect(home_page.celebrate_header).not_to_be_visible()
+    # page.pause()
+    expect(home_page.celebrate_header).to_be_visible()
 
 
 @pytest.mark.skip(reason="not ready")
