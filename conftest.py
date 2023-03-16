@@ -2,13 +2,13 @@ import os
 import pytest
 from playwright.sync_api import expect
 
-PASSWORD = os.environ['PASSWORD']
+# PASSWORD = os.environ['PASSWORD']
 
-# try:
-#     PASSWORD = os.environ['PASSWORD']
-# except KeyError:
-#     import utils.secret_config
-#     PASSWORD = utils.secret_config.PASSWORD
+try:
+    PASSWORD = os.environ['PASSWORD']
+except KeyError:
+    import utils.secret_config
+    PASSWORD = utils.secret_config.PASSWORD
 
 
 @pytest.fixture()
