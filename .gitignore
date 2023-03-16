@@ -5,3 +5,4 @@ tests_ui_layout/__pycache__/
 __pycache__/
 /utils/secret_config.py
 *.env
+/visual_tests/snapshots/
