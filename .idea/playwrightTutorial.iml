@@ -3,12 +3,12 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
-      <excludeFolder url="file://$MODULE_DIR$/tests_ui_layout/.pytest_cache" />
-      <excludeFolder url="file://$MODULE_DIR$/tests_ui_layout/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/tests_matching_tools/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests_matching_tools/.pytest_cache/v" />
       <excludeFolder url="file://$MODULE_DIR$/.pytest_cache" />
       <excludeFolder url="file://$MODULE_DIR$/.pytest_cache/v" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (3.9)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
