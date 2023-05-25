@@ -3,7 +3,7 @@ import pytest
 
 @pytest.fixture(scope="session")
 def context_creation(playwright):
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     context.storage_state(path='state.json')
 
